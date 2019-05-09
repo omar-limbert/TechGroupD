@@ -3,25 +3,17 @@ package core.data.structure.linked.list.ilist;
 /**
  * Class Node.
  */
-public class Node {
-    private int value;
-    private Node next;
+public class Node<T> {
+    private final T value;
+    private Node<T> next;
 
     /**
      * Node Constructor.
      *
      * @param value Node value.
      */
-    public Node(int value) {
+    public Node(T value) {
         this.value = value;
-        this.next = null;
-    }
-
-    /**
-     * Node Constructor.
-     */
-    public Node() {
-        this.value = 0;
         this.next = null;
     }
 
@@ -30,7 +22,7 @@ public class Node {
      *
      * @return next, next Node.
      */
-    public Node getNext() {
+    public Node<T> getNext() {
         return next;
     }
 
@@ -48,7 +40,7 @@ public class Node {
      *
      * @return value, node value.
      */
-    public int getValue() {
+    public T getValue() {
         return this.value;
     }
 }

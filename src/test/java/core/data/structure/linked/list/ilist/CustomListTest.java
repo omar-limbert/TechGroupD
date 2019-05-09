@@ -12,7 +12,7 @@ import static org.junit.Assert.assertNull;
  */
 public class CustomListTest {
 
-    private IList customList;
+    private IList<Integer> customList;
 
     /**
      * This method initialize values.
@@ -20,7 +20,7 @@ public class CustomListTest {
     @Before
     public void init() {
 
-        customList = new CustomList();
+        customList = new CustomList<>();
     }
 
     /**

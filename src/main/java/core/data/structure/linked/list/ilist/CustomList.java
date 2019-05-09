@@ -5,9 +5,9 @@ import java.util.stream.IntStream;
 /**
  * Class CustomList.
  */
-public class CustomList implements IList {
-    private Node head;
-    private Node tail;
+public class CustomList<T> implements IList<T> {
+    private Node<T> head;
+    private Node<T> tail;
     private int size;
 
     /**
@@ -19,8 +19,8 @@ public class CustomList implements IList {
     }
 
     @Override
-    public void addFirst(int value) {
-        Node newNode = new Node(value);
+    public void addFirst(T value) {
+        Node<T> newNode = new Node<>(value);
         if (head == null) {
             head = newNode;
             tail = newNode;
@@ -32,8 +32,8 @@ public class CustomList implements IList {
     }
 
     @Override
-    public void addLast(int value) {
-        Node newNode = new Node(value);
+    public void addLast(T value) {
+        Node<T> newNode = new Node<>(value);
         if (tail == null) {
             tail = newNode;
             head = newNode;
@@ -45,7 +45,7 @@ public class CustomList implements IList {
     }
 
     @Override
-    public void add(int index, int value) {
+    public void add(int index, T value) {
         if (index <= 1 || index >= size) {
             this.addFirstOrLast(index, value);
         } else {
@@ -58,7 +58,7 @@ public class CustomList implements IList {
      * @param index position to add.
      * @param value value to add.
      */
-    private void addFirstOrLast(int index, int value) {
+    private void addFirstOrLast(int index, T value) {
         if (index > size) {
             this.addLast(value);
         } else {
@@ -71,12 +71,12 @@ public class CustomList implements IList {
      * @param index position to add.
      * @param value value to add.
      */
-    private void addBetweenFirstAndLast(int index, int value) {
+    private void addBetweenFirstAndLast(int index, T value) {
         Node current = head;
         for (int i = 1; i < index - 1; i++) {
             current = current.getNext();
         }
-        Node newNode = new Node(value);
+        Node<T> newNode = new Node<>(value);
         newNode.setNext(current.getNext());
         current.setNext(newNode);
         size++;
@@ -95,8 +95,8 @@ public class CustomList implements IList {
     }
 
     @Override
-    public Node removeFirst() {
-        Node current = head;
+    public Node<T> removeFirst() {
+        Node<T> current = head;
         if (head == tail) {
             head = tail = null;
             size = 0;
@@ -112,8 +112,8 @@ public class CustomList implements IList {
     }
 
     @Override
-    public Node removeLast() {
-        Node current = tail;
+    public Node<T> removeLast() {
+        Node<T> current = tail;
         if (head == tail) {
             head = tail = null;
             size = 0;
@@ -123,7 +123,7 @@ public class CustomList implements IList {
             while (current.getNext().getNext() != null) {
                 current = current.getNext();
             }
-            Node deletedNode = tail;
+            Node<T> deletedNode = tail;
             tail = current;
             tail.setNext(null);
             size--;
@@ -133,9 +133,9 @@ public class CustomList implements IList {
     }
 
     @Override
-    public Node remove(int index) {
-        Node current = head;
-        Node previousNode = current;
+    public Node<T> remove(int index) {
+        Node<T> current = head;
+        Node<T> previousNode = current;
         if (head == tail) {
             head = tail = null;
             size = 0;
