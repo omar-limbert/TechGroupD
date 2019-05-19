@@ -1,5 +1,6 @@
-package core.data.structure.linked.list.homework1;
+package homeworks.homework1;
 
+import homeworks.homework1.LinkedListUtils;
 import org.junit.Test;
 
 import java.util.Arrays;
