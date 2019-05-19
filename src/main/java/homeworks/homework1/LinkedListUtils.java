@@ -1,4 +1,4 @@
-package core.data.structure.linked.list.homework1;
+package homeworks.homework1;
 /*
  * SD2x Homework #1
  * Implement the methods below according to the specification in the assignment description.
