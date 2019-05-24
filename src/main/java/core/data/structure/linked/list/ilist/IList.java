@@ -50,6 +50,20 @@ public interface IList<T> {
     Node remove(int index);
 
     /**
+     * Method to get the first node.
+     *
+     * @return Node, element.
+     */
+    Node getFirst();
+
+    /**
+     * Method to get the last node.
+     *
+     * @return Node, element.
+     */
+    Node getLast();
+
+    /**
      * Method to print Linked List.
      *
      * @return String value with all linked list elements.

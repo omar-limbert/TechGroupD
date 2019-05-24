@@ -151,4 +151,14 @@ public class CustomList<T> implements IList<T> {
         }
         return null;
     }
+
+    @Override
+    public Node getFirst() {
+        return head;
+    }
+
+    @Override
+    public Node getLast() {
+        return tail;
+    }
 }
