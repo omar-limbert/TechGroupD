@@ -5,7 +5,7 @@ import java.util.stream.IntStream;
 /**
  * Class CustomList.
  */
-public class CustomList<T> implements IList<T> {
+public class CustomList<T extends Comparable<T>> implements IList<T> {
     private Node<T> head;
     private Node<T> tail;
     private int size;
