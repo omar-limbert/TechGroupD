@@ -7,7 +7,7 @@ import core.data.structure.linked.list.ilist.Node;
 /**
  * Class CustomQueue.
  */
-public class CustomStack<T> implements IStack<T> {
+public class CustomStack<T extends Comparable<T>>  implements IStack<T> {
     private IList<T> customList;
 
     /**
